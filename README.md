@@ -1,3 +1,4 @@
+# Trường hợp dữ liệu Qa nguồn internet
 
 # Làm sạch
 > Làm sạch em nghĩ cũng sẽ giống như mọi quy trình tiền xử lí của data mining khác:
@@ -5,10 +6,9 @@
 > chuẩn hóa cú pháp,
 > Xóa lỗi lặp,
 > Tách câu,
-# Lọc dữ liệu từ bộ dữ liệu internet bằng đối sánh mờ
+# Lọc dữ liệu liên quan (khách sạn) từ bộ dữ liệu internet bằng đối sánh mờ
 
 # Dataset
-
 
 `train_light.json` files contain a list of dictionary that represents a single datapoint, with the following keys
 
