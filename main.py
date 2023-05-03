@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 import json
-from fuzzywuzzy import fuzz
+import thefuzz
 
 # jsol light:
 # id
@@ -34,14 +34,17 @@ class DataQA():
         self.metric = "Bleu"
         self.data_item_list = data_item_list
         self.weight = 0.1
-        
+    
+    #lọc step1
     def databaseVocab(self, vocab_db):
         item_list = []
         for item in self.data_item_list:
             for item2 in vocab_db:
-            ratio = fuzz(item, item2 )
-        
-        return
+                rattio = thefuzz.token_sort_ratio(item2, item)
+                if rattio >= 0.3:
+                    item_list.append(item)
+        return item_list
+
         
 def parsingDataset():
     single_container, annotation_container = [] , []
