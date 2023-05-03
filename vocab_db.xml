@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<root>
+    <item>
+        <eng>hotel</eng>
+        <vie>khách sạn</vie>
+   <item>
+        <eng>independent hotel</eng>
+        <vie>khách sạn độc lập</vie>
+    </item>
+    <item>
+        <eng>chain hotel</eng>
+        <vie>khách sạn theo chuỗi</vie>
+    </item>
+    <item>
+        <eng>economy hotel</eng>
+        <vie>khách sạn bình dân</vie>
+    </item>
+    <item>
+        <eng>budget hotel</eng>
+        <vie>khách sạn bình dân</vie>
+    </item>
+    <item>
+        <eng>midscale service</eng>
+        <vie>khách sạn trung cấp</vie>
+    </item>
+    <item>
+        <eng>hostel</eng>
+        <vie>nhà nghỉ</vie>
+    </item>
+    <item>
+        <eng>homestay</eng>
+        <vie>khách sạn lưu trú</vie>
+    </item>
+   
+</root>
