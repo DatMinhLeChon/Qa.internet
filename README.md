@@ -1,3 +1,10 @@
+
+# Làm sạch
+> Làm sạch em nghĩ cũng sẽ giống như mọi quy trình tiền xử lí của data mining khác:
+> Sửa lỗi chính tả,
+> chuẩn hóa cú pháp,
+> Xóa lỗi lặp,
+> Tách câu,
 # Lọc dữ liệu từ bộ dữ liệu internet bằng đối sánh mờ
 
 # Dataset
