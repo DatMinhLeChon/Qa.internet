@@ -1,6 +1,6 @@
 # Lọc dữ liệu từ bộ dữ liệu internet bằng fuzz
 
-# dataset
+# Dataset
 
 
 `train_light.json` files contain a list of dictionary that represents a single datapoint, with the following keys
@@ -12,12 +12,12 @@
     - (If `type` is `singleAnswer`) `answer`: a list of strings that are all acceptable answer texts
     - (If `type` is `multipleQAs`) `qaPairs`: a list of dictionaries with `question` and `answer`. `question` is a string, and `answer` is a list of strings that are all acceptable answer texts
 
-# cấu trúc lại dataset để thực thi 
+# Cấu trúc lại dataset để thực thi 
 ```c
 def parsingDataset():
 ```
 
-# định dạng mẫu vocab db
+# VD định dạng mẫu vocab db
 
 ```c
 <?xml version="1.0"?>
