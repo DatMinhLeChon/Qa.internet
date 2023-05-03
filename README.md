@@ -1,4 +1,4 @@
-# Lọc dữ liệu từ bộ dữ liệu internet bằng fuzz
+# Lọc dữ liệu từ bộ dữ liệu internet bằng đối sánh mờ
 
 # Dataset
 
@@ -17,7 +17,7 @@
 def parsingDataset():
 ```
 
-# VD định dạng mẫu vocab db
+# VD định dạng mẫu vocab db ( cũng có thể dùng chung vocal db token, đây là định dạng riêng cho fuzz)
 
 ```c
 <?xml version="1.0"?>
