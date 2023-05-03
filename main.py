@@ -43,6 +43,7 @@ class DataQA():
                 rattio = thefuzz.token_sort_ratio(item2, item)
                 if rattio >= 0.3:
                     item_list.append(item)
+                break
         return item_list
 
         
