@@ -17,3 +17,17 @@
 def parsingDataset():
 ```
 
+# định dạng mẫu vocab db
+
+```c
+<?xml version="1.0"?>
+<root>
+    <item>
+        <eng>hotel</eng>
+        <vie>khách sạn</vie>
+   <item>
+        <eng>independent hotel</eng>
+        <vie>khách sạn độc lập</vie>
+    </item>
+    
+```
