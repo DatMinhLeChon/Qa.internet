@@ -19,9 +19,9 @@
     - (If `type` is `singleAnswer`) `answer`: a list of strings that are all acceptable answer texts
     - (If `type` is `multipleQAs`) `qaPairs`: a list of dictionaries with `question` and `answer`. `question` is a string, and `answer` is a list of strings that are all acceptable answer texts
 
-# Cấu trúc lại dataset để thực thi 
+# Cấu trúc lại dataset để thực thi (main.py)
 ```c
-def parsingDataset():
+def parsingDataset()
 ```
 
 # VD định dạng mẫu vocab db ( cũng có thể dùng chung vocal db token, đây là định dạng riêng cho fuzz)
