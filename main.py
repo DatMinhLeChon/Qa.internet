@@ -1,7 +1,8 @@
 import os
 import pandas as pd
 import json
-import thefuzz
+from fuzzywuzzy import fuzz
+import xml.etree.ElementTree as ET
 
 # jsol light:
 # id
@@ -34,17 +35,23 @@ class DataQA():
         self.metric = "Bleu"
         self.data_item_list = data_item_list
         self.weight = 0.1
-    
-    #lọc step1
+            #lọc step1
     def databaseVocab(self, vocab_db):
         item_list = []
         for item in self.data_item_list:
             for item2 in vocab_db:
-                rattio = thefuzz.token_sort_ratio(item2, item)
+                rattio = fuzz.token_sort_ratio(item2, item)
                 if rattio >= 0.3:
                     item_list.append(item)
                 break
         return item_list
+
+class VocabularyDB():
+    def __init__(self, file_name):
+        self.file_name = file_name
+        self.root = ET.parse('file_name').getroot
+
+
 
         
 def parsingDataset():
