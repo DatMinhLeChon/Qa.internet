@@ -8,7 +8,7 @@
 > Tách câu,
 # Lọc dữ liệu liên quan (khách sạn) từ bộ dữ liệu internet bằng đối sánh mờ
 
-# Dataset
+# Dataset: train_light.josl
 
 `train_light.json` files contain a list of dictionary that represents a single datapoint, with the following keys
 
@@ -21,7 +21,8 @@
 
 # Cấu trúc lại dataset để thực thi (main.py)
 ```c
-def parsingDataset()
+    parsingDataset() # phân tích cú pháp dataset và cau trúc lại
+    Class DataQA() : # tiến hành tính điểm cho từ item dataQa bằng cách xử lí tokenize, đối khớp chuỗi với Vocabulary data 
 ```
 
 # VD định dạng mẫu vocab db ( cũng có thể dùng chung vocal db token, đây là định dạng riêng cho fuzz)
@@ -38,3 +39,7 @@ def parsingDataset()
     </item>
     
 ```
+
+# Dataset output: train_hotel.json
+
+
