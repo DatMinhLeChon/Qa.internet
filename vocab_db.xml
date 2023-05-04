@@ -3,6 +3,7 @@
     <item>
         <eng>hotel</eng>
         <vie>khách sạn</vie>
+    </item>
    <item>
         <eng>independent hotel</eng>
         <vie>khách sạn độc lập</vie>
@@ -31,5 +32,4 @@
         <eng>homestay</eng>
         <vie>khách sạn lưu trú</vie>
     </item>
-   
 </root>

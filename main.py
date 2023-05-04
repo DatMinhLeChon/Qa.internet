@@ -31,42 +31,41 @@ class SingleAnswer():
         self.score = None
 
 class DataQA():
-    def __init__(self, item, data_item_list):
+    def __init__(self, data_item_list, vocab_db):
         self.metric = "Bleu"
         self.data_item_list = data_item_list
-        self.weight = 0.1
+        self.vocab_db = vocab_db
+        self.weight = 0.3
             #lọc step1
-    def databaseVocab(self, vocab_db):
+    def databaseVocab(self):
         item_list = []
         for item in self.data_item_list:
-            for item2 in vocab_db:
-                rattio = fuzz.token_sort_ratio(item2, item)
-                if rattio >= 0.3:
+            for item2 in self.vocab_db:
+                rattio = fuzz.token_sort_ratio(item2.get("eng"), item.question)
+                if rattio/100 >= self.weight:
+                    item.score == rattio
                     item_list.append(item)
-                break
+                    break
+                    
         return item_list
 
 class VocabularyDB():
     def __init__(self, file_name):
-        self.root = ET.parse(file_name).getroot
+        self.root = ET.parse(file_name).getroot()
     
     def parsingVocabulary(self):
         container_vocabulary = []
         for child in self.root:
-            container_vocabulary.append({"eng":child.attributes['eng'].value, "vie":child.attributes['vie'].value})
+            container_vocabulary.append({"eng":child[0].text, "vie":child[1].text})
         return container_vocabulary
 
     def exportVocabulary(self):
         print(self.parsingVocabulary())
 
-
-
-
         
-def parsingDataset():
-    single_container, annotation_container = [] , []
-    json_path = 'train_light.json' # dataset
-    json_open = open(json_path)
+def parsingDataset(file_name):
+    single_container, annotation_container = [] , [] # dataset
+    json_open = open(file_name)
     json_load = json.load(json_open)
     for item in json_load:
         dict = item["annotations"][0] # parse the only 0 index list to this content 
@@ -81,5 +80,10 @@ def parsingDataset():
 
 
 if __name__ == "__main__":
-    temp = VocabularyDB("vocab_db.xml")
-    temp.exportVocabulary()
+    vocab = VocabularyDB(r'vocab_db.xml')
+    vocab_db= vocab.parsingVocabulary()
+    single_container, multiple_container = parsingDataset(r'train_light.json')
+    data = DataQA(single_container, vocab_db).databaseVocab()
+    for item in data:
+        print(item.question)
+        print(item.answer)
