@@ -48,8 +48,17 @@ class DataQA():
 
 class VocabularyDB():
     def __init__(self, file_name):
-        self.file_name = file_name
-        self.root = ET.parse('file_name').getroot
+        self.root = ET.parse(file_name).getroot
+    
+    def parsingVocabulary(self):
+        container_vocabulary = []
+        for child in self.root:
+            container_vocabulary.append({"eng":child.attributes['eng'].value, "vie":child.attributes['vie'].value})
+        return container_vocabulary
+
+    def exportVocabulary(self):
+        print(self.parsingVocabulary())
+
 
 
 
@@ -69,9 +78,8 @@ def parsingDataset():
                 #annotation_container_temp.append(QaPairs(item2.get("question"), item2.get("answer")))
             annotation_container.append(MultipleAnswer(item["id"], item["question"], dict_temp))
     return single_container, annotation_container
-            
-def fuzzyMatching():
-    
+
 
 if __name__ == "__main__":
-    parsingDataset()
+    temp = VocabularyDB("vocab_db.xml")
+    temp.exportVocabulary()
