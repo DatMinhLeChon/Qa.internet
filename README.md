@@ -22,7 +22,29 @@
 # Cấu trúc lại dataset để thực thi (main.py)
 ```c
     parsingDataset() # phân tích cú pháp dataset và cau trúc lại
-    Class DataQA() : # tiến hành tính điểm cho từ item dataQa bằng cách xử lí tokenize, đối khớp chuỗi với Vocabulary data 
+    # tiến hành tính điểm cho từ item dataQa bằng cách xử lí tokenize, đối khớp chuỗi với Vocabulary data 
+    class DataQA():
+    def __init__(self, data_item_list, vocab_db):
+        self.metric = "Bleu"
+        self.data_item_list = data_item_list
+        self.vocab_db = vocab_db
+        self.weight = 0.7
+            #lọc step1
+    def databaseVocab(self):
+        item_list = []
+        for item_qa in self.data_item_list:
+            for item_vocab in self.vocab_db:
+                temp_item_vocab = word_tokenize(item_qa.question)
+                for word_split in temp_item_vocab:
+                    rattio = fuzz.token_sort_ratio(item_vocab.get("eng"), word_split)
+                    if rattio/100 >= self.weight:
+                        item_qa.score += rattio/len(word_split)
+                        temp_item_vocab.remove(word_split)
+                if (item_qa.score/100 >= 0.3):
+                    item_list.append(item_qa)
+                    break
+        return item_list
+
 ```
 
 # VD định dạng mẫu vocab db ( cũng có thể dùng chung vocal db token, đây là định dạng riêng cho fuzz)
