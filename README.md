@@ -8,7 +8,7 @@
 > Tách câu,
 # Lọc dữ liệu liên quan (khách sạn) từ bộ dữ liệu internet bằng đối sánh mờ
 
-# Dataset: train_light.josl
+# Dataset: xem train_light.json
 
 `train_light.json` files contain a list of dictionary that represents a single datapoint, with the following keys
 
@@ -19,7 +19,7 @@
     - (If `type` is `singleAnswer`) `answer`: a list of strings that are all acceptable answer texts
     - (If `type` is `multipleQAs`) `qaPairs`: a list of dictionaries with `question` and `answer`. `question` is a string, and `answer` is a list of strings that are all acceptable answer texts
 
-# Cấu trúc lại dataset để thực thi (main.py)
+# Cấu trúc lại dataset để thực thi (xem main.py)
 ```c
     parsingDataset() # phân tích cú pháp dataset và cau trúc lại
     # tiến hành tính điểm cho từ item dataQa bằng cách xử lí tokenize, đối khớp chuỗi với Vocabulary data 
@@ -62,6 +62,6 @@
     
 ```
 
-# Dataset output: train_hotel.json
+# Dataset output: xem train_hotel.json
 
 
