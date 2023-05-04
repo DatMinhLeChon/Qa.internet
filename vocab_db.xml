@@ -32,4 +32,13 @@
         <eng>homestay</eng>
         <vie>khách sạn lưu trú</vie>
     </item>
+    <item>
+        <eng>single room</eng>
+        <vie>giường đơn</vie>
+    </item>
+    <item>
+        <eng>double room</eng>
+        <vie>giường đôi</vie>
+    </item>
+    
 </root>
