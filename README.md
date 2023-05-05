@@ -62,7 +62,7 @@
     
 ```
 
-làm giàu tập dữ liệu vocab để độ chính xác của dữ liệu trainning được trích xuất gia tăng
+Làm giàu tập dữ liệu vocab để độ chính xác của dữ liệu trainning được trích xuất gia tăng
 
 # Dataset output: xem train_hotel.json
 
