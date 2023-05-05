@@ -23,6 +23,7 @@
 ```c
     parsingDataset() # phân tích cú pháp dataset và cau trúc lại
     # tiến hành tính điểm cho từ item dataQa bằng cách xử lí tokenize, đối khớp chuỗi với Vocabulary data 
+    
     class DataQA():
     def __init__(self, data_item_list, vocab_db):
         self.metric = "Bleu"
