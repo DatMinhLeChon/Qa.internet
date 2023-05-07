@@ -67,4 +67,6 @@ Làm giàu tập dữ liệu vocab để độ chính xác của dữ liệu tra
 
 # Dataset output: xem train_hotel.json
 
+# Tăng cường dữ liệu : vd API BERT
+
 
