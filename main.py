@@ -94,6 +94,6 @@ if __name__ == "__main__":
         print(item.answer)
     data = []
     for item in data_temp:
-        data.append({"id":item.id, "question":item.question, "annnotaion":[{"type": "singleAnswer", "answer" : item.answer}]})
+        data.append({"id":item.id, "question":item.question, "annotation":[{"type": "singleAnswer", "answer" : item.answer}]})
     with open('train_hotel.json', 'w') as outfile:
         json.dump(data, outfile)
